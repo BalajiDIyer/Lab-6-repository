@@ -11,3 +11,18 @@ def encoder(password):
             encoded += str(int(password[x]) + 3) # each digit is having 3 added to it
 
     return encoded
+
+def decoder(encoded):
+    decoded = ''
+    for val in encoded:
+        if val == '0':
+            val = '7'
+        elif val == '1':
+            val = '8'
+        elif val == '2':
+            val = '9'
+        else:
+            val = int(val)-3
+            val = str(val)
+        decoded += val
+    return decoded
